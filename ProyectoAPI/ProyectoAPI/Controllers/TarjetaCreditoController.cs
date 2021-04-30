@@ -56,6 +56,10 @@ namespace ProyectoAPI.Controllers
 
             try
             {
+                if (string.IsNullOrEmpty(tarjetaCredito.ClienteCedula))
+                {
+                    tarjetaCredito.ClienteCedula = null;
+                }
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)

@@ -63,7 +63,16 @@
     </form>
   </div>
   <br>
+  <div class="row">
+    <div class="form-group col-md-5">
+      <select >
+        <option [ngValue]="dl" *ngFor="let dl of list">{{dl.nombres}}</option>
+      </select>
+
+    </div>
+  </div>
+  <br>
   <div class="form-group">
-    <button class="btn btn-success btn-lg btn-block" [disabled]="form.invalid" type="submit"><i class="fas fa-database"></i>Aceptar</button>
+    <button class="btn btn-success btn-lg btn-block"  type="submit"><i class="fas fa-database"></i>Aceptar</button>
   </div>
 </form>
