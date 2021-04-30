@@ -1,3 +1,4 @@
+import { TarjetaService } from './../../../services/tarjeta.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaTarjetaCreditoComponent implements OnInit {
 
-  constructor() { }
+  constructor(public tarjetaServices: TarjetaService) { }
 
   ngOnInit(): void {
+    this.tarjetaServices.obtenerTarjetas();
   }
 
 }

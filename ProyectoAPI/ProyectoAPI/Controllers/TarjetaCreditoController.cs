@@ -79,6 +79,11 @@ namespace ProyectoAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<TarjetaCredito>> PostTarjetaCredito(TarjetaCredito tarjetaCredito)
         {
+            if (string.IsNullOrEmpty(tarjetaCredito.ClienteCedula))
+            {
+                tarjetaCredito.ClienteCedula = null;
+            }
+
             _context.TarjetaCredito.Add(tarjetaCredito);
             await _context.SaveChangesAsync();
 

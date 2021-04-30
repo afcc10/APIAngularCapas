@@ -29,8 +29,12 @@ namespace ProyectoAPI.Models
         public string CVV { get; set; }
 
         [Required]
+        [Column(TypeName = "datetime")]
+        public DateTime Fecha { get; set; }
+
+        [Required]
         [Column(TypeName = "smallint")]
-        public short Estado { get; set; }
+        public bool Estado { get; set; }
         
         [Column(TypeName = "nvarchar(450)")]
         public string ClienteCedula  { get; set; }
